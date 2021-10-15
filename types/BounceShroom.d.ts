@@ -1,10 +1,4 @@
 type BounceShroom = Model & {
-	Anchor: Part;
-	Destination: Part;
-	Configuration: Configuration & {
-		Debug: BoolValue;
-		Height: IntValue;
-	};
 	MushroomModel: Model & {
 		Stem: Model & {
 			StemPart: Part;
@@ -12,4 +6,14 @@ type BounceShroom = Model & {
 		Launcher: Part;
 		Head: Model;
 	};
-}
+	Configuration: Configuration & {
+		Debug: BoolValue;
+		CustomVelocity: BoolValue & {
+			Underhand: BoolValue;
+			Velocity: NumberValue;
+		};
+	};
+	Markers: Model & {
+		Destination: Part;
+	};
+};
